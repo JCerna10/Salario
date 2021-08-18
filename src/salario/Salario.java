@@ -5,6 +5,8 @@
  */
 package salario;
 
+import java.util.Scanner;
+
 /**
  *
  * @author JCERNA10
@@ -16,6 +18,34 @@ public class Salario {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String Nombre = "";
+        double Salario = 0;
+        double ISSS = 0.02;
+        double AFP = 0.03;
+        double Renta = 0.05;
+        double SalarioNeto = 0;
+
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingresar el Nombre");
+        Nombre = entrada.nextLine();
+
+        System.out.println("Ingresar salario");
+        Salario = entrada.nextDouble();
+
+        if (Salario >= 500) {
+            SalarioNeto = (Salario - (Salario * ISSS) - (Salario * AFP) - (Salario * Renta));
+            AFP = Salario * AFP;
+            ISSS = Salario * ISSS;
+            Renta = Salario * Renta;
+            System.out.println("Nombre: " + Nombre);
+            System.out.println("SalarioNeto: " + (SalarioNeto));
+            System.out.println("La deduccion de AFP es: " + (AFP));
+            System.out.println("La deduccion de ISSS es: " + (ISSS));
+            System.out.println("La deduccion de renta es: " + (Renta));
+        } else {
+            System.out.println("El Salario no es valido");
+        }
+
     }
-    
+
 }
