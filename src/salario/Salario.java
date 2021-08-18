@@ -34,16 +34,16 @@ public class Salario {
 
         if (Salario >= 500) {
             SalarioNeto = (Salario - (Salario * ISSS) - (Salario * AFP) - (Salario * Renta));
-            AFP = Salario * AFP;
             ISSS = Salario * ISSS;
+            AFP = Salario * AFP;
             Renta = Salario * Renta;
             System.out.println("Nombre: " + Nombre);
             System.out.println("SalarioNeto: " + (SalarioNeto));
-            System.out.println("La deduccion de AFP es: " + (AFP));
-            System.out.println("La deduccion de ISSS es: " + (ISSS));
+            System.out.println("La deduccion de AFP es: " + (ISSS));
+            System.out.println("La deduccion de ISSS es: " + (AFP));
             System.out.println("La deduccion de renta es: " + (Renta));
         } else {
-            System.out.println("El Salario no es valido");
+            System.out.println("El Salario no tiene retenciones");
         }
 
     }
